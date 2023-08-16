@@ -3,15 +3,14 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="./libs/fancybox/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="./libs/swiper/swiper.css" />
     <link rel="stylesheet" href="css/main.css" />
     <title>Bitrix</title>
   </head>
 
   <body>
+
     <div class="voting-results">
-      <div class="voting-results__container container">
+      <div class="voting-results__container">
         <div class="voting-results__title">Результаты голосования</div>
 
         <div class="voting-results__inner">
@@ -32,7 +31,7 @@
                         <span class="options-results__points">4</span>
                       </div>
 
-                      <div class="options-results__line"></div>
+                      <div class="options-results__line options-results__line--first"></div>
                     </div>
                   </li>
 
@@ -44,7 +43,7 @@
                         <span class="options-results__points">14</span>
                       </div>
 
-                      <div class="options-results__line"></div>
+                      <div class="options-results__line options-results__line--second"></div>
                     </div>
                   </li>
 
@@ -58,7 +57,7 @@
                         <span class="options-results__points">2</span>
                       </div>
 
-                      <div class="options-results__line"></div>
+                      <div class="options-results__line options-results__line--third"></div>
                     </div>
                   </li>
 
@@ -70,7 +69,7 @@
                         <span class="options-results__points">0</span>
                       </div>
 
-                      <div class="options-results__line"></div>
+                      <div class="options-results__line options-results__line--fourth"></div>
                     </div>
                   </li>
 
@@ -82,7 +81,7 @@
                         <span class="options-results__points">8</span>
                       </div>
 
-                      <div class="options-results__line"></div>
+                      <div class="options-results__line options-results__line--fifth"></div>
                     </div>
                   </li>
                 </ul>
@@ -120,67 +119,70 @@
             </div>
           </div>
 
-          <ul class="voting-results__cards">
+          <ul class="voting-results__cards scroll">
             <li class="voting-results__card card-results">
               <div class="card-results__inner">
                 <div class="card-results__header">Пойду</div>
 
                 <div class="card-results__total total-results">
-                  <div class="total-results__icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
-                      viewBox="0 0 24 25"
-                      fill="none"
-                    >
-                      <rect y="0.770142" width="24" height="24" rx="12" fill="#3BC8F5" />
-                      <path
-                        d="M10.3755 15.5122L7.91991 13.0566C7.78759 12.9243 7.60813 12.85 7.42101 12.85C7.23388 12.85 7.05442 12.9243 6.92211 13.0566C6.78979 13.1889 6.71545 13.3684 6.71545 13.5555C6.71545 13.6482 6.7337 13.7399 6.76916 13.8255C6.80462 13.9111 6.85659 13.9889 6.92211 14.0544L9.88013 17.0124C10.1561 17.2884 10.6019 17.2884 10.8779 17.0124L18.365 9.52538C18.4973 9.39306 18.5716 9.2136 18.5716 9.02648C18.5716 8.83935 18.4973 8.65989 18.365 8.52757C18.2327 8.39526 18.0532 8.32092 17.8661 8.32092C17.679 8.32092 17.4995 8.39526 17.3672 8.52757L10.3755 15.5122Z"
-                        fill="white"
-                      />
-                    </svg>
+                  <div class="total-results__inner">
+                    <div class="total-results__icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="25"
+                        viewBox="0 0 24 25"
+                        fill="none"
+                      >
+                        <rect y="0.770142" width="24" height="24" rx="12" fill="#3BC8F5" />
+                        <path
+                          d="M10.3755 15.5122L7.91991 13.0566C7.78759 12.9243 7.60813 12.85 7.42101 12.85C7.23388 12.85 7.05442 12.9243 6.92211 13.0566C6.78979 13.1889 6.71545 13.3684 6.71545 13.5555C6.71545 13.6482 6.7337 13.7399 6.76916 13.8255C6.80462 13.9111 6.85659 13.9889 6.92211 14.0544L9.88013 17.0124C10.1561 17.2884 10.6019 17.2884 10.8779 17.0124L18.365 9.52538C18.4973 9.39306 18.5716 9.2136 18.5716 9.02648C18.5716 8.83935 18.4973 8.65989 18.365 8.52757C18.2327 8.39526 18.0532 8.32092 17.8661 8.32092C17.679 8.32092 17.4995 8.39526 17.3672 8.52757L10.3755 15.5122Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="total-results__text">4 голоса</div>
                   </div>
-                  <div class="total-results__text">4 голоса</div>
+                
                 </div>
 
                 <div class="card-results__block">
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-1.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Иван Иванов</div>
+                      <a href="#" class="user-results__name">Иван Иванов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-2.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Владимир Соколов</div>
+                      <a href="#" class="user-results__name">Владимир Соколов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-3.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Виталий Дмитриев</div>
+                      <a href="#" class="user-results__name">Виталий Дмитриев</a>
                       <div class="user-results__profession">Програмист</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-4.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Иван Иванов</div>
+                      <a href="#" class="user-results__name">Иван Иванов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
@@ -223,141 +225,144 @@
                 <div class="card-results__header">Не смогу пойти</div>
 
                 <div class="card-results__total total-results">
-                  <div class="total-results__icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
-                      viewBox="0 0 24 25"
-                      fill="none"
-                    >
-                      <rect y="0.770142" width="24" height="24" rx="12" fill="#3BC8F5" />
-                      <path
-                        d="M10.3755 15.5122L7.91991 13.0566C7.78759 12.9243 7.60813 12.85 7.42101 12.85C7.23388 12.85 7.05442 12.9243 6.92211 13.0566C6.78979 13.1889 6.71545 13.3684 6.71545 13.5555C6.71545 13.6482 6.7337 13.7399 6.76916 13.8255C6.80462 13.9111 6.85659 13.9889 6.92211 14.0544L9.88013 17.0124C10.1561 17.2884 10.6019 17.2884 10.8779 17.0124L18.365 9.52538C18.4973 9.39306 18.5716 9.2136 18.5716 9.02648C18.5716 8.83935 18.4973 8.65989 18.365 8.52757C18.2327 8.39526 18.0532 8.32092 17.8661 8.32092C17.679 8.32092 17.4995 8.39526 17.3672 8.52757L10.3755 15.5122Z"
-                        fill="white"
-                      />
-                    </svg>
+                  <div class="total-results__inner">
+                    <div class="total-results__icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="25"
+                        viewBox="0 0 24 25"
+                        fill="none"
+                      >
+                        <rect y="0.770142" width="24" height="24" rx="12" fill="#3BC8F5" />
+                        <path
+                          d="M10.3755 15.5122L7.91991 13.0566C7.78759 12.9243 7.60813 12.85 7.42101 12.85C7.23388 12.85 7.05442 12.9243 6.92211 13.0566C6.78979 13.1889 6.71545 13.3684 6.71545 13.5555C6.71545 13.6482 6.7337 13.7399 6.76916 13.8255C6.80462 13.9111 6.85659 13.9889 6.92211 14.0544L9.88013 17.0124C10.1561 17.2884 10.6019 17.2884 10.8779 17.0124L18.365 9.52538C18.4973 9.39306 18.5716 9.2136 18.5716 9.02648C18.5716 8.83935 18.4973 8.65989 18.365 8.52757C18.2327 8.39526 18.0532 8.32092 17.8661 8.32092C17.679 8.32092 17.4995 8.39526 17.3672 8.52757L10.3755 15.5122Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="total-results__text">14 голосов</div>
                   </div>
-                  <div class="total-results__text">14 голоса</div>
+                
                 </div>
 
                 <div class="card-results__block">
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-1.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Иван Иванов</div>
+                      <a href="#" class="user-results__name">Иван Иванов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-2.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Владимир Соколов</div>
+                      <a href="#" class="user-results__name">Владимир Соколов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-3.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Виталий Дмитриев</div>
+                      <a href="#" class="user-results__name">Виталий Дмитриев</a>
                       <div class="user-results__profession">Програмист</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-4.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Иван Иванов</div>
+                      <a href="#" class="user-results__name">Иван Иванов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-1.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Иван Иванов</div>
+                      <a href="#" class="user-results__name">Иван Иванов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-2.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Владимир Соколов</div>
+                      <a href="#" class="user-results__name">Владимир Соколов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-3.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Виталий Дмитриев</div>
+                      <a href="#" class="user-results__name">Виталий Дмитриев</a>
                       <div class="user-results__profession">Програмист</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-4.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Иван Иванов</div>
+                      <a href="#" class="user-results__name">Иван Иванов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-1.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Иван Иванов</div>
+                      <a href="#" class="user-results__name">Иван Иванов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-2.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Владимир Соколов</div>
+                      <a href="#" class="user-results__name">Владимир Соколов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-3.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Виталий Дмитриев</div>
+                      <a href="#" class="user-results__name">Виталий Дмитриев</a>
                       <div class="user-results__profession">Програмист</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-4.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Иван Иванов</div>
+                      <a href="#" class="user-results__name">Иван Иванов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
@@ -402,41 +407,44 @@
                 </div>
 
                 <div class="card-results__total total-results">
-                  <div class="total-results__icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
-                      viewBox="0 0 24 25"
-                      fill="none"
-                    >
-                      <rect y="0.770142" width="24" height="24" rx="12" fill="#3BC8F5" />
-                      <path
-                        d="M10.3755 15.5122L7.91991 13.0566C7.78759 12.9243 7.60813 12.85 7.42101 12.85C7.23388 12.85 7.05442 12.9243 6.92211 13.0566C6.78979 13.1889 6.71545 13.3684 6.71545 13.5555C6.71545 13.6482 6.7337 13.7399 6.76916 13.8255C6.80462 13.9111 6.85659 13.9889 6.92211 14.0544L9.88013 17.0124C10.1561 17.2884 10.6019 17.2884 10.8779 17.0124L18.365 9.52538C18.4973 9.39306 18.5716 9.2136 18.5716 9.02648C18.5716 8.83935 18.4973 8.65989 18.365 8.52757C18.2327 8.39526 18.0532 8.32092 17.8661 8.32092C17.679 8.32092 17.4995 8.39526 17.3672 8.52757L10.3755 15.5122Z"
-                        fill="white"
-                      />
-                    </svg>
+                  <div class="total-results__inner">
+                    <div class="total-results__icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="25"
+                        viewBox="0 0 24 25"
+                        fill="none"
+                      >
+                        <rect y="0.770142" width="24" height="24" rx="12" fill="#3BC8F5" />
+                        <path
+                          d="M10.3755 15.5122L7.91991 13.0566C7.78759 12.9243 7.60813 12.85 7.42101 12.85C7.23388 12.85 7.05442 12.9243 6.92211 13.0566C6.78979 13.1889 6.71545 13.3684 6.71545 13.5555C6.71545 13.6482 6.7337 13.7399 6.76916 13.8255C6.80462 13.9111 6.85659 13.9889 6.92211 14.0544L9.88013 17.0124C10.1561 17.2884 10.6019 17.2884 10.8779 17.0124L18.365 9.52538C18.4973 9.39306 18.5716 9.2136 18.5716 9.02648C18.5716 8.83935 18.4973 8.65989 18.365 8.52757C18.2327 8.39526 18.0532 8.32092 17.8661 8.32092C17.679 8.32092 17.4995 8.39526 17.3672 8.52757L10.3755 15.5122Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="total-results__text">2 голоса</div>
                   </div>
-                  <div class="total-results__text">2 голоса</div>
+                
                 </div>
 
                 <div class="card-results__block">
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-1.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Иван Иванов</div>
+                      <a href="#" class="user-results__name">Иван Иванов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-2.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Владимир Соколов</div>
+                      <a href="#" class="user-results__name">Владимир Соколов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
@@ -479,22 +487,25 @@
                 <div class="card-results__header">Вариант 4</div>
 
                 <div class="card-results__total total-results">
-                  <div class="total-results__icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
-                      viewBox="0 0 24 25"
-                      fill="none"
-                    >
-                      <rect y="0.770142" width="24" height="24" rx="12" fill="#3BC8F5" />
-                      <path
-                        d="M10.3755 15.5122L7.91991 13.0566C7.78759 12.9243 7.60813 12.85 7.42101 12.85C7.23388 12.85 7.05442 12.9243 6.92211 13.0566C6.78979 13.1889 6.71545 13.3684 6.71545 13.5555C6.71545 13.6482 6.7337 13.7399 6.76916 13.8255C6.80462 13.9111 6.85659 13.9889 6.92211 14.0544L9.88013 17.0124C10.1561 17.2884 10.6019 17.2884 10.8779 17.0124L18.365 9.52538C18.4973 9.39306 18.5716 9.2136 18.5716 9.02648C18.5716 8.83935 18.4973 8.65989 18.365 8.52757C18.2327 8.39526 18.0532 8.32092 17.8661 8.32092C17.679 8.32092 17.4995 8.39526 17.3672 8.52757L10.3755 15.5122Z"
-                        fill="white"
-                      />
-                    </svg>
+                  <div class="total-results__inner">
+                    <div class="total-results__icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="25"
+                        viewBox="0 0 24 25"
+                        fill="none"
+                      >
+                        <rect y="0.770142" width="24" height="24" rx="12" fill="#3BC8F5" />
+                        <path
+                          d="M10.3755 15.5122L7.91991 13.0566C7.78759 12.9243 7.60813 12.85 7.42101 12.85C7.23388 12.85 7.05442 12.9243 6.92211 13.0566C6.78979 13.1889 6.71545 13.3684 6.71545 13.5555C6.71545 13.6482 6.7337 13.7399 6.76916 13.8255C6.80462 13.9111 6.85659 13.9889 6.92211 14.0544L9.88013 17.0124C10.1561 17.2884 10.6019 17.2884 10.8779 17.0124L18.365 9.52538C18.4973 9.39306 18.5716 9.2136 18.5716 9.02648C18.5716 8.83935 18.4973 8.65989 18.365 8.52757C18.2327 8.39526 18.0532 8.32092 17.8661 8.32092C17.679 8.32092 17.4995 8.39526 17.3672 8.52757L10.3755 15.5122Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="total-results__text">0 голосов</div>
                   </div>
-                  <div class="total-results__text">0 голосов</div>
+                
                 </div>
 
                 <div class="card-results__block"></div>
@@ -536,121 +547,124 @@
                 <div class="card-results__header">Вариант</div>
 
                 <div class="card-results__total total-results">
-                  <div class="total-results__icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="25"
-                      viewBox="0 0 24 25"
-                      fill="none"
-                    >
-                      <rect y="0.770142" width="24" height="24" rx="12" fill="#3BC8F5" />
-                      <path
-                        d="M10.3755 15.5122L7.91991 13.0566C7.78759 12.9243 7.60813 12.85 7.42101 12.85C7.23388 12.85 7.05442 12.9243 6.92211 13.0566C6.78979 13.1889 6.71545 13.3684 6.71545 13.5555C6.71545 13.6482 6.7337 13.7399 6.76916 13.8255C6.80462 13.9111 6.85659 13.9889 6.92211 14.0544L9.88013 17.0124C10.1561 17.2884 10.6019 17.2884 10.8779 17.0124L18.365 9.52538C18.4973 9.39306 18.5716 9.2136 18.5716 9.02648C18.5716 8.83935 18.4973 8.65989 18.365 8.52757C18.2327 8.39526 18.0532 8.32092 17.8661 8.32092C17.679 8.32092 17.4995 8.39526 17.3672 8.52757L10.3755 15.5122Z"
-                        fill="white"
-                      />
-                    </svg>
+                  <div class="total-results__inner">
+                    <div class="total-results__icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="25"
+                        viewBox="0 0 24 25"
+                        fill="none"
+                      >
+                        <rect y="0.770142" width="24" height="24" rx="12" fill="#3BC8F5" />
+                        <path
+                          d="M10.3755 15.5122L7.91991 13.0566C7.78759 12.9243 7.60813 12.85 7.42101 12.85C7.23388 12.85 7.05442 12.9243 6.92211 13.0566C6.78979 13.1889 6.71545 13.3684 6.71545 13.5555C6.71545 13.6482 6.7337 13.7399 6.76916 13.8255C6.80462 13.9111 6.85659 13.9889 6.92211 14.0544L9.88013 17.0124C10.1561 17.2884 10.6019 17.2884 10.8779 17.0124L18.365 9.52538C18.4973 9.39306 18.5716 9.2136 18.5716 9.02648C18.5716 8.83935 18.4973 8.65989 18.365 8.52757C18.2327 8.39526 18.0532 8.32092 17.8661 8.32092C17.679 8.32092 17.4995 8.39526 17.3672 8.52757L10.3755 15.5122Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="total-results__text">8 голосов</div>
                   </div>
-                  <div class="total-results__text">8 голосов</div>
+                
                 </div>
 
                 <div class="card-results__block">
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-1.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Иван Иванов</div>
+                      <a href="#" class="user-results__name">Иван Иванов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-2.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Владимир Соколов</div>
+                      <a href="#" class="user-results__name">Владимир Соколов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-3.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Виталий Дмитриев</div>
+                      <a href="#" class="user-results__name">Виталий Дмитриев</a>
                       <div class="user-results__profession">Програмист</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-4.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Иван Иванов</div>
+                      <a href="#" class="user-results__name">Иван Иванов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-1.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Иван Иванов</div>
+                      <a href="#" class="user-results__name">Иван Иванов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-1.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Иван Иванов</div>
+                      <a href="#" class="user-results__name">Иван Иванов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-2.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Владимир Соколов</div>
+                      <a href="#" class="user-results__name">Владимир Соколов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-3.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Виталий Дмитриев</div>
+                      <a href="#" class="user-results__name">Виталий Дмитриев</a>
                       <div class="user-results__profession">Програмист</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-4.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Иван Иванов</div>
+                      <a href="#" class="user-results__name">Иван Иванов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
 
                   <div class="card-results__user user-results">
-                    <div class="user-results__images">
+                    <a href="#" class="user-results__images">
                       <img src="images/user-1.png" alt="icon" />
-                    </div>
+                    </a>
                     <div class="user-results__content">
-                      <div class="user-results__name">Иван Иванов</div>
+                      <a href="#" class="user-results__name">Иван Иванов</a>
                       <div class="user-results__profession">Менеджер</div>
                     </div>
                   </div>
@@ -693,10 +707,36 @@
       </div>
     </div>
 
-    <script src="./libs/jquery/jquery-3.2.1.min.js"></script>
-    <script src="./libs/fancybox/jquery.fancybox.min.js"></script>
-    <script src="./libs/swiper/swiper.min.js"></script>
+    <!-- скрипт для перетаскивания карточек при зажатой кнопке мыши -->
+    <script>
+      (function() {
+        let speed = 2; // Скорость скролла.
 
-    <script src="js/main.js"></script>
+        let scrolls = document.querySelectorAll('.scroll');
+
+        scrolls.forEach(function(scroll) {
+          let left = 0; // отпустили мышку - сохраняем положение скролла
+          let drag = false;
+          let coorX = 0; // нажали мышку - сохраняем координаты.
+
+          scroll.addEventListener('mousedown', function(e) {
+            drag = true;
+            coorX = e.pageX - this.offsetLeft;
+          });
+
+          document.addEventListener('mouseup', function() {
+            drag = false;
+            left = scroll.scrollLeft;
+          });
+
+          scroll.addEventListener('mousemove', function(e) {
+            if (drag) {
+              this.scrollLeft = left + (e.pageX - this.offsetLeft - coorX) * speed;
+            }
+          });
+        });
+      })();
+    </script>
+
   </body>
 </html>
