@@ -707,36 +707,36 @@
       </div>
     </div>
 
-    <!-- скрипт для перетаскивания карточек при зажатой кнопке мыши -->
-    <script>
-      (function() {
-        let speed = 2; // Скорость скролла.
+  <!-- скрипт для перетаскивания карточек при зажатой кнопке мыши -->
+<script>
+  (function() {
+    let speed = 2; // Скорость скролла.
 
-        let scrolls = document.querySelectorAll('.scroll');
+    let scrolls = document.querySelectorAll('.scroll');
 
-        scrolls.forEach(function(scroll) {
-          let left = 0; // отпустили мышку - сохраняем положение скролла
-          let drag = false;
-          let coorX = 0; // нажали мышку - сохраняем координаты.
+    scrolls.forEach(function(scroll) {
+      let left = 0; // отпустили мышку - сохраняем положение скролла
+      let drag = false;
+      let coorX = 0; // нажали мышку - сохраняем координаты по X.
 
-          scroll.addEventListener('mousedown', function(e) {
-            drag = true;
-            coorX = e.pageX - this.offsetLeft;
-          });
+      scroll.addEventListener('mousedown', function(e) {
+        drag = true;
+        coorX = e.pageX - this.offsetLeft;
+      });
 
-          document.addEventListener('mouseup', function() {
-            drag = false;
-            left = scroll.scrollLeft;
-          });
+      document.addEventListener('mouseup', function() {
+        drag = false;
+        left = scroll.scrollLeft;
+      });
 
-          scroll.addEventListener('mousemove', function(e) {
-            if (drag) {
-              this.scrollLeft = left + (e.pageX - this.offsetLeft - coorX) * speed;
-            }
-          });
-        });
-      })();
-    </script>
+      scroll.addEventListener('mousemove', function(e) {
+        if (drag) {
+          this.scrollLeft = left + (this.offsetLeft - e.pageX + coorX) * speed;
+        }
+      });
+    });
+  })();
+</script>
 
   </body>
 </html>
